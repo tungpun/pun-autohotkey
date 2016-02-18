@@ -56,16 +56,11 @@ CapsLock & y::Send, {Delete}
 
 hiddenWindowNumber = 0
 
-; Hide window
-F7::
-    hiddenWindowNumber++
-    WinGet winID, ID, A
-    WinHide A
-    hiddenWindow%hiddenWindowNumber% := winID
-Return
+; Minimize Window
+CapsLock & F4::WinMinimize, A
 
 ; Show windows
-F8::
+CapsLock & F8::
    Loop %hiddenWindowNumber%
    {
       winID := hiddenWindow%A_Index%
@@ -73,4 +68,16 @@ F8::
    }
 Return
 
-F10::WinMinimize, A
+; Hide window
+CapsLock & F9::
+    hiddenWindowNumber++
+    WinGet winID, ID, A
+    WinHide A
+    hiddenWindow%hiddenWindowNumber% := winID
+Return
+
+CapsLock & F10::Send, {Volume_Mute}
+
+CapsLock & F11::Send, {Volume_Down 2}
+
+CapsLock & F12::Send, {Volume_Up 2}
