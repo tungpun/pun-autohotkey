@@ -54,8 +54,23 @@ CapsLock & u::Send, {BackSpace}
 
 CapsLock & y::Send, {Delete}
 
-F7::WinHide, A
+hiddenWindowNumber = 0
 
-F8::WinShow, A
+; Hide window
+F7::
+    hiddenWindowNumber++
+    WinGet winID, ID, A
+    WinHide A
+    hiddenWindow%hiddenWindowNumber% := winID
+Return
+
+; Show windows
+F8::
+   Loop %hiddenWindowNumber%
+   {
+      winID := hiddenWindow%A_Index%
+      WinShow ahk_id %winID%
+   }
+Return
 
 F10::WinMinimize, A
