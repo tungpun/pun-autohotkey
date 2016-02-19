@@ -28,6 +28,20 @@ CapsLock & i::
         Send, +{Up}
 Return
 
+CapsLock & h::
+    if getkeystate("shift") = 0
+        Send, {Home}
+    else    
+        Send, +{Home}
+Return
+
+CapsLock & n::
+    if getkeystate("shift") = 0
+        Send, {End}
+    else    
+        Send, +{End}
+Return
+
 CapsLock & s::Send, ^s
 
 CapsLock & c::Send, ^c
@@ -45,10 +59,6 @@ CapsLock & t::Send, ^t
 CapsLock & r::Send, ^r
 
 CapsLock & w::Send, ^w
-
-CapsLock & h::Send, {Home}
-
-CapsLock & n::Send, {End}  
 
 CapsLock & u::Send, {BackSpace}
 
@@ -81,3 +91,4 @@ CapsLock & F10::Send, {Volume_Mute}
 CapsLock & F11::Send, {Volume_Down 2}
 
 CapsLock & F12::Send, {Volume_Up 2}
+
