@@ -1,0 +1,9 @@
+keycode 66 = Mode_switch Mode_switch
+keycode 31 = i I Up
+keycode 44 = j J Left
+keycode 45 = k K Down
+keycode 46 = l L Right
+keycode 43 = h H Home
+keycode 57 = n N End
+keycode 30 = u U BackSpace
+keycode 29 = y Y Delete
