@@ -92,3 +92,10 @@ CapsLock & F11::Send, {Volume_Down 2}
 
 CapsLock & F12::Send, {Volume_Up 2}
 
+
+MButton::	
+	If (A_TimeSincePriorHotkey < 500)  ;hyperclick		
+		Return
+	Send, {MButton}
+Return
+
